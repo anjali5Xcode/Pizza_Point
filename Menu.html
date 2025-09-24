@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!--connect css file-->
+  <link rel="stylesheet" type="text/css" href="Menu.css">
+  <!-- FontAwesome for cart icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>Menu Section</title>
+</head>
+<body>
+  <!-- Cart Icon -->
+  <div class="cart-icon">
+    <a href="cart.html">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cart-count">0</span>
+    </a>
+  </div>
+
+  <div class="menu">
+    <div class="heading">
+      <h1>&mdash;Menu&mdash;</h1>
+    </div>
+
+    <!-- Pizza Items -->
+    <div class="Pizza">
+      <img src="images/Cheese-N-Corn-Pizza.webp">
+      <div class="details">
+        <div class="details-sub">
+          <h5>Cheese-N-Corn-Pizza</h5>
+          <h5 class="price">Rs.169/-</h5>
+        </div>
+        <p>It is made using pizza base, sauce, mozzarella cheese, corns and mixed herbs.</p>
+        <button class="add-to-cart" data-name="Cheese-N-Corn-Pizza" data-price="169">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="Pizza">
+      <img src="images/Margherita-Pizza.webp">
+      <div class="details">
+        <div class="details-sub">
+          <h5>Margherita-Pizza</h5>
+          <h5 class="price">Rs.99/-</h5>
+        </div>
+        <p>A typical Neapolitan pizza made with tomatoes, fresh basil, and mozzarella.</p>
+        <button class="add-to-cart" data-name="Margherita-Pizza" data-price="99">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="Pizza">
+      <img src="images/Pepperoni-pizza.webp">
+      <div class="details">
+        <div class="details-sub">
+          <h5>Pepperoni-pizza</h5>
+          <h5 class="price">Rs.249/-</h5>
+        </div>
+        <p>Made using pepperoni (spicy pork & beef), red chilli powder and paprika.</p>
+        <button class="add-to-cart" data-name="Pepperoni-pizza" data-price="249">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="Pizza">
+      <img src="images/Farmhouse-Pizza.webp">
+      <div class="details">
+        <div class="details-sub">
+          <h5>Farmhouse-Pizza</h5>
+          <h5 class="price">Rs.229/-</h5>
+        </div>
+        <p>Includes mushroom, tomato, capsicum, onions, mozzarella and caramelized onions.</p>
+        <button class="add-to-cart" data-name="Farmhouse-Pizza" data-price="229">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="Pizza">
+      <img src="images/Paneer-Makhni-Pizza.webp">
+      <div class="details">
+        <div class="details-sub">
+          <h5>Paneer-Makhni-Pizza</h5>
+          <h5 class="price">Rs.249/-</h5>
+        </div>
+        <p>Indian style pizza using makhni gravy and tikka-style paneer.</p>
+        <button class="add-to-cart" data-name="Paneer-Makhni-Pizza" data-price="249">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="Pizza">
+      <img src="images/Peppy-Paneer-Pizza.webp">
+      <div class="details">
+        <div class="details-sub">
+          <h5>Peppy-Paneer-Pizza</h5>
+          <h5 class="price">Rs.229/-</h5>
+        </div>
+        <p>Made with spiced paneer, green olives, and green capsicum.</p>
+        <button class="add-to-cart" data-name="Peppy-Paneer-Pizza" data-price="229">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="Pizza">
+      <img src="images/Aussie-Pizza.webp">
+      <div class="details">
+        <div class="details-sub">
+          <h5>Aussie-Pizza</h5>
+          <h5 class="price">Rs.319/-</h5>
+        </div>
+        <p>Australian-style pizza with BBQ sauce, ham, bacon, eggs and veggies.</p>
+        <button class="add-to-cart" data-name="Aussie-Pizza" data-price="319">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="Pizza">
+      <img src="images/Mexican-Green-Wave-Pizza.webp">
+      <div class="details">
+        <div class="details-sub">
+          <h5>Mexican-Green-Wave-Pizza</h5>
+          <h5 class="price">Rs.219/-</h5>
+        </div>
+        <p>Topped with onions, tomatoes, bell peppers, jalapeno & Mexican herbs.</p>
+        <button class="add-to-cart" data-name="Mexican-Green-Wave-Pizza" data-price="219">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="Pizza">
+      <img src="images/Kale-And-Sausage-Pizza.webp">
+      <div class="details">
+        <div class="details-sub">
+          <h5>Kale-And-Sausage-Pizza</h5>
+          <h5 class="price">Rs.399/-</h5>
+        </div>
+        <p>Healthy pizza with kale, Pecorino Romano cheese, and sausage.</p>
+        <button class="add-to-cart" data-name="Kale-And-Sausage-Pizza" data-price="399">Add to Cart</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartCount = document.getElementById("cart-count");
+
+    function updateCartCount() {
+      const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+      cartCount.textContent = totalItems;
+    }
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", () => {
+        const name = button.getAttribute("data-name");
+        const price = parseInt(button.getAttribute("data-price"));
+
+        // Check if item already exists in cart
+        const existingItem = cart.find(item => item.name === name);
+        if (existingItem) {
+          existingItem.quantity++;
+        } else {
+          cart.push({ name, price, quantity: 1 });
+        }
+        
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+        //alert(name + " added to cart!");
+      });
+    });
+
+    // Initialize cart count
+    updateCartCount();
+  </script>
+</body>
+</html>

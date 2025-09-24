@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Contact.css">
+</head>
+
+<body>
+<section>
+    
+    <div class="section-header">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>
+          At Pizza Point, we value your feedback and are here to assist you in any way we can.
+           Whether you have questions, suggestions, or need assistance, please feel free to contact us using the following methods:
+          <br>
+          Customer Service Hours:  Monday to Saturday: 10:00 AM - 10:00 PM  <br> Sunday: 11:00 AM - 9:00 PM
+          </p>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+        
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            
+            <div class="contact-info-content">
+              <h4>Address</h4>
+              <p>4671 kanjawala,<br/> Bawana, Delhi- 110039</p>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class=" fa fa-phone"></i>
+            </div>
+            
+            <div class="contact-info-content">
+              <h4>Phone</h4>
+              <p>561-456-2321</p>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            
+            <div class="contact-info-content">
+              <h4>Email</h4>
+             <p>abc@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <form onsubmit="return validateForm()">
+            <h2>Get in Touch</h2>
+            <div class="input-box">
+                <label for="name">Name: </label>
+                <input type="text" id="name" placeholder="Your name">
+                <small class="error"></small>
+            </div>
+            
+            <div class="input-box">
+                <label for="/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/">Email: </label>
+                <input type="text" id="email" placeholder="Your email">
+                <small class="error"></small>
+            </div>
+            
+            <div class="input-box">
+                <label for="message">Message: </label>
+                <textarea id="message" placeholder="Your message" rows="6"></textarea>
+                <small class="error"></small>
+            </div>
+            
+            <div class="center">
+                    <input type="submit" value="Send Message">
+            </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <script src="contact.js"></script>
+</body>
+</html>

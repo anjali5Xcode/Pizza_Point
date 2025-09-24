@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="About.css">
+</head>
+<body>
+    <div class="container">
+        <img src="images\AboutImg.jpg">
+        <div class="about_details">
+            <span>About Us</span>
+            <h2>We Provide Tasty and Good Quality Pizza to Your Family!</h2>
+            <p>It’s a simple equation that keeps our customers coming back for more.
+                 Always fresh toppings and great service plus low, low prices equals great pizza.
+                </p>
+            <br>
+            <p>Here at our Pizza Point, we strive to give our customers the best. 
+                We’re one of the few family-owned companies left that still truly care about our customers</p>
+            <button class="btn" onclick="displayText()">Learn More</button>
+              <div id="textField" style="display: none;">
+                 <p>Whether you’re looking to feed your family or cater a gathering or lunch meeting, feeding a large group is both easy and affordable at our Pizza Point.</p>
+              </div>
+        </div>
+    </div>
+    <script>
+        function displayText() {
+            var text = document.getElementById("textField");
+            text.style.display = "block";
+        }
+    </script>
+</body>

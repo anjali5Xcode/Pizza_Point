@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LOGIN PAGE</title>
+    <link rel="stylesheet" href="Styling.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!--First we have to create registration form-->
+    <div class="container">
+        <div class="form-box">
+            <form action="" name="Formfill" onsubmit="return validation()">
+                <h2>Login</h2>
+                <p id="result"></p>
+                <div class="input-box">
+                    <i class='bx bxs-envelope'></i>
+                    <input type="email" name="Email" placeholder="Email ">
+                </div>
+
+                <div class="input-box">
+                    <i class='bx bxs-lock-alt'></i>
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+                <div class="button">
+                    <input type="submit" class="btn" onclick="validation()" value="Login">
+                </div>
+                <div class="group">
+                    <span><a href="Forgot-Password.html">Forget-Password</a></span>
+                    <span><a href="Register.html">Register</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+<script>
+    function validation(){
+    if(document.Formfill.Email.value==""|| !document.Formfill.Email.value.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/))
+    {
+        document.getElementById("result").innerHTML="<span style='color: red;'>Enter your email*</span>";
+        return false;
+    }
+
+    else if(document.Formfill.password.value=="")
+    {
+        document.getElementById("result").innerHTML="<span style='color: red;'>Enter your Password*</span>";
+        return false;
+    }
+}
+</script>
+</body>
+</html>

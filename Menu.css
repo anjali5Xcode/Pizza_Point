@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #f9f7fc;   /* same soft background */
+}
+.menu{
+    padding: 0 10px 30px 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    grid-gap: 20px 40px;
+}
+.heading{
+    background: linear-gradient(135deg, #8B0000, #000000); /* maroon + black */
+    color: #fff;
+    margin-bottom: 30px;
+    padding: 30px 0;
+    grid-column: 1/-1;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.heading>h1{
+    font-weight: 600;
+    font-size: 36px;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+}
+.heading>h1::after{
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: #fff; 
+    border-radius: 2px;
+}
+
+.Pizza{
+    display: grid;
+    position: relative;
+    grid-template-rows: auto 1fr;
+    border-radius: 15px;
+    box-shadow: 0 0 18px rgba(139,0,0,0.3); /* maroon glow */
+    transition: .2s ease-in-out;
+}
+.Pizza img{
+    position: relative;
+    width: 100%;
+    height: 280px;
+    border-radius: 15px 15px 0 0;
+    cursor: pointer;
+}
+.h1{
+    grid-column: 1/-1;
+    text-align: center;
+}
+.details{
+    padding: 20px 10px;
+    display: grid;
+    grid-template-rows: auto 1fr 50px;
+    grid-row-gap: 15px;
+}
+.details-sub{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.details-sub>h5{
+    font-weight: 600;
+    font-size: 18px;
+}
+.price{
+    text-align: right;
+}
+.details>p{
+    color: #6f6f6f;
+    font-size: 15px;
+    line-height: 28px;
+    font-weight: 400;
+    align-self: stretch;
+}
+.details>button{
+    background: linear-gradient(135deg, #8B0000, #000000);   /* maroon-black */
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    width: 180px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+.details>button:hover{
+    background: linear-gradient(135deg, #660000, #111111);   /* darker hover */
+    box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+}
+
+/* --- Cart Icon Styles --- */
+.cart-icon {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    z-index: 1000;
+    background: #fff;
+    padding: 10px 14px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(139,0,0,0.3);
+    transition: all 0.3s ease;
+}
+.cart-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+}
+.cart-icon a {
+    color: #8B0000;   /* maroon cart */
+    text-decoration: none;
+    position: relative;
+}
+#cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #000;   /* black badge */
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(139,0,0,0.4);
+}
